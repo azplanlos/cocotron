@@ -113,7 +113,7 @@ installFolder=/Developer
 productName=Cocotron
 productVersion=1.0
 
-binutilsVersion=2.21-20111025
+binutilsVersion=2.19
 mingwRuntimeVersion=3.20
 mingwAPIVersion=3.17-2
 gmpVersion=4.2.3
@@ -199,12 +199,12 @@ toolFolder=$productFolder/bin
 PATH="$resultFolder/bin:$PATH"
 
 downloadCompilerIfNeeded(){
-	$scriptResources/downloadFilesIfNeeded.sh $downloadFolder "http://cocotron-tools-gpl3.googlecode.com/files/$compiler-$compilerVersion$compilerVersionDate.tar.bz2 http://ftp.sunet.se/pub/gnu/gmp/gmp-$gmpVersion.tar.bz2 http://cocotron-binutils-2-21.googlecode.com/files/binutils-$binutilsVersion.tar.gz http://cocotron-tools-gpl3.googlecode.com/files/mpfr-$mpfrVersion.tar.bz2"
+	$scriptResources/downloadFilesIfNeeded.sh $downloadFolder "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/cocotron-tools-gpl3/$compiler-$compilerVersion$compilerVersionDate.tar.bz2 http://ftp.sunet.se/mirror/gnu.org/gnu/gmp/gmp-$gmpVersion.tar.bz2 https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/cocotron-tools-gpl3/binutils-$binutilsVersion.tar.bz2 https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/cocotron-tools-gpl3/mpfr-$mpfrVersion.tar.bz2"
 	$scriptResources/unarchiveFiles.sh $downloadFolder $sourceFolder "$compiler-$compilerVersion$compilerVersionDate binutils-$binutilsVersion gmp-$gmpVersion mpfr-$mpfrVersion"
 }
 
 createWindowsInterfaceIfNeeded(){
-	"$scriptResources/downloadFilesIfNeeded.sh" $downloadFolder "http://cocotron-tools-gpl3.googlecode.com/files/mingwrt-$mingwRuntimeVersion-mingw32-dev.tar.gz http://cocotron-tools-gpl3.googlecode.com/files/w32api-$mingwAPIVersion-mingw32-dev.tar.gz"
+	"$scriptResources/downloadFilesIfNeeded.sh" $downloadFolder "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/cocotron-tools-gpl3/mingwrt-$mingwRuntimeVersion-mingw32-dev.tar.gz https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/cocotron-tools-gpl3/w32api-$mingwAPIVersion-mingw32-dev.tar.gz"
 
 	"$scriptResources/unarchiveFiles.sh" $downloadFolder $interfaceFolder "mingwrt-$mingwRuntimeVersion-mingw32-dev w32api-$mingwAPIVersion-mingw32-dev"
 }
